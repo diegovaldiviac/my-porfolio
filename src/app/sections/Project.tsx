@@ -97,7 +97,7 @@ function Project({
 
 export default function ProjectsSection() {
   return (
-    <Box>
+    <div className="skills-container">
       <H2>{"Projects"}</H2>
       <Project
         title={"Resume Website"}
@@ -230,6 +230,6 @@ export default function ProjectsSection() {
           },
         ]}
       />
-    </Box>
+    </div>
   );
 }

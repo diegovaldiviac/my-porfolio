@@ -2,10 +2,10 @@ import Box from "../components/Box";
 import { H2, H4 } from "../components/Headings";
 import TextItem from "../components/TextItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faJava, faNodeJs, faPython, faLinux, faDev, faPhp,
+import { faHtml5, faCss3Alt, faJsSquare, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
     faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws, 
     faStackOverflow} from '@fortawesome/free-brands-svg-icons';
-import { faCode, faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faCloudUpload } from '@fortawesome/free-solid-svg-icons';
 
 
 function SkillCategory(props: { title: string; skills: string[] }) {
@@ -38,13 +38,13 @@ export default function SkillsSection() {
                     <p>CSS</p>
                     
                 </div>
-                <div className="skill-card js">
-                    <FontAwesomeIcon icon={faJsSquare} style={{ fontSize: '40px' }}/>
-                    <p>JavaScript</p>
-                </div>
                 <div className="skill-card node">
                     <FontAwesomeIcon icon={faNodeJs} style={{ fontSize: '40px' }}/>
                     <p>Node</p>
+                </div>
+                <div className="skill-card react">
+                    <FontAwesomeIcon icon={faHashnode} style={{ fontSize: '40px' }}/>
+                    <p>Terraform</p>
                 </div>
                 <div className="skill-card python">
                     <FontAwesomeIcon icon={faPython} style={{ fontSize: '40px' }}/>
@@ -84,7 +84,7 @@ export default function SkillsSection() {
                         <FontAwesomeIcon icon={faConfluence} style={{ fontSize: '40px' }}/>
                         <p>Confluence</p>
                     </div>
-                    <div className="skill-card js">
+                    <div className="skill-card html">
                         <FontAwesomeIcon icon={faCode} style={{ fontSize: '40px' }}/>
                         <p>Postman</p>
                     </div>
@@ -96,7 +96,7 @@ export default function SkillsSection() {
                         <FontAwesomeIcon icon={faAws} style={{ fontSize: '40px' }}/>
                         <p>AWS</p>
                     </div>
-                    <div className="skill-card react">
+                    <div className="skill-card js">
                         <FontAwesomeIcon icon={faLinux} style={{ fontSize: '40px' }}/>
                         <p>Linux</p>
                     </div>
