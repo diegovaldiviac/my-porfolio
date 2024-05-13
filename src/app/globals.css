@@ -286,6 +286,7 @@ hr {
 }
 
 .skills-container .grid-skills .skill-card {
+  margin-top: 20px;
   background-color: #DADADB;
   color: #1D1E20;
   display: flex;
@@ -300,6 +301,7 @@ hr {
 }
 
 .skills-container .grid-skills i {
+  
   font-size: 1.5rem;
 }
 

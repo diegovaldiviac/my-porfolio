@@ -18,7 +18,7 @@ function H2({ children }: { children: ReactNode }) {
 
 function H3({ children }: { children: ReactNode }) {
   return (
-    <h3 className="py-1 text-xl text-gray-600 dark:text-slate-200">
+    <h3 className="py-1 text-xl text-white-600 dark:text-white">
       {children}
     </h3>
   );
@@ -26,7 +26,7 @@ function H3({ children }: { children: ReactNode }) {
 
 function H4({ children }: { children: ReactNode }) {
   return (
-    <h4 className="py-1 text-lg text-gray-600 lg:text-nowrap dark:text-slate-300">
+    <h4 className="py-1 text-lg text-white-600 lg:text-nowrap dark:text-white">
       {children}
     </h4>
   );
@@ -34,7 +34,7 @@ function H4({ children }: { children: ReactNode }) {
 
 function H5({ children }: { children: ReactNode }) {
   return (
-    <h5 className="py-1 text-sm text-gray-600 dark:text-slate-400">
+    <h5 className="py-1 text-sm text-white-600 dark:text-white">
       {children}
     </h5>
   );
