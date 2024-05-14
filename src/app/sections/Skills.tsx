@@ -2,10 +2,10 @@ import Box from "../components/Box";
 import { H2, H4 } from "../components/Headings";
 import TextItem from "../components/TextItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
-    faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws, 
+import { faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
+    faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws,
     faStackOverflow} from '@fortawesome/free-brands-svg-icons';
-import { faCode, faCloudUpload } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faTerminal, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 
 function SkillCategory(props: { title: string; skills: string[] }) {
@@ -23,7 +23,7 @@ function SkillCategory(props: { title: string; skills: string[] }) {
 
 export default function SkillsSection() {
   return (
-    <div className="skills-container">
+    <div className="section-container">
         <H2>{"Skills"}</H2>
         
         <div className="divide-y">
@@ -42,17 +42,17 @@ export default function SkillsSection() {
                     <FontAwesomeIcon icon={faNodeJs} style={{ fontSize: '40px' }}/>
                     <p>Node</p>
                 </div>
-                <div className="skill-card react">
+                <div className="skill-card node">
                     <FontAwesomeIcon icon={faHashnode} style={{ fontSize: '40px' }}/>
-                    <p>Terraform</p>
-                </div>
-                <div className="skill-card python">
-                    <FontAwesomeIcon icon={faPython} style={{ fontSize: '40px' }}/>
-                    <p>Python</p>
+                    <p>SQL</p>
                 </div>
                 <div className="skill-card react">
                     <FontAwesomeIcon icon={faJava} style={{ fontSize: '40px' }}/>
                     <p>Java</p>
+                </div>
+                <div className="skill-card python">
+                    <FontAwesomeIcon icon={faPython} style={{ fontSize: '40px' }}/>
+                    <p>Python</p>
                 </div>
                 <div className="skill-card js">
                     <FontAwesomeIcon icon={faStackOverflow} style={{ fontSize: '40px' }}/>
@@ -99,6 +99,14 @@ export default function SkillsSection() {
                     <div className="skill-card js">
                         <FontAwesomeIcon icon={faLinux} style={{ fontSize: '40px' }}/>
                         <p>Linux</p>
+                    </div>
+                    <div className="skill-card react">
+                    <FontAwesomeIcon icon={faTerminal} style={{ fontSize: '40px' }}/>
+                    <p>Terraform</p>
+                    </div>
+                    <div className="skill-card node">
+                    <FontAwesomeIcon icon={faDatabase} style={{ fontSize: '40px' }}/>
+                    <p>PostgreSQL</p>
                     </div>
                 </div>
             </div>

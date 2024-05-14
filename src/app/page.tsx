@@ -3,6 +3,7 @@ import Layout from "./components/Layout"
 import ProjectsSection from './sections/Project';
 import SkillSection from "./sections/Skills"
 import EducationSection from "./sections/Education"
+import ExperienceSection from './sections/Experience';
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <Layout>
       <div className="flex flex-col items-center py-6 pt-0">
         <EducationSection />
+        <ExperienceSection />
         <ProjectsSection />
         <SkillSection />
       </div>

@@ -97,7 +97,7 @@ function Project({
 
 export default function ProjectsSection() {
   return (
-    <div className="skills-container">
+    <div className="section-container">
       <H2>{"Projects"}</H2>
       <Project
         title={"Resume Website"}

@@ -8,13 +8,6 @@
   --background-end-rgb: 50, 50, 50; /* End of black background */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 0, 0, 0; /* Black foreground */
-    --background-start-rgb: 0, 0, 0; /* Start of black background */
-    --background-end-rgb: 0, 0, 0; /* End of black background */
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -47,13 +40,6 @@ body {
   width: 900px;
   margin: 0 auto;
   padding: 0 0;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    width: 100%;
-    padding: 0 2rem;
-  }
 }
 
 a {
@@ -102,12 +88,6 @@ hr {
   height: 1px;
   width: 80%;
   margin: 0 auto;
-}
-
-@media screen and (max-width: 768px) {
-  hr {
-    width: 100%;
-  }
 }
 
 .footer-container {
@@ -262,30 +242,47 @@ hr {
   }
 }
 
-/* Skills */
-.skills-container {
+/* Section */
+.section-container {
   padding: 2rem 0;
+  max-width: 800px; 
+  width: 100%;
+  margin: 0 auto;
 }
 
-.skills-container h2 {
+.section-container h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.skills-container .grid-skills {
+.section-container .grid-skills {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-  .skills-container .grid-skills {
-    grid-template-columns: repeat(2, 1fr);
+.section-container {
+  padding: 2rem 0;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 1.5rem 1rem; /* Reduce padding for smaller screens */
   }
 }
 
-.skills-container .grid-skills .skill-card {
+@media (max-width: 480px) {
+  .section-container {
+    padding: 1rem 0.5rem; /* Further reduce padding for very small screens */
+  }
+}
+
+.section-container .grid-skills .skill-card {
   margin-top: 20px;
   background-color: #DADADB;
   color: #1D1E20;
@@ -300,33 +297,38 @@ hr {
   cursor: context-menu;
 }
 
-.skills-container .grid-skills i {
+.section-container .section-skills i {
   
   font-size: 1.5rem;
+  color: #b3b3b3;
 }
 
-.skills-container .grid-skills .html:hover {
+.section-container .grid-skills .html:hover {
   background-color: #E34F26;
 }
 
-.skills-container .grid-skills .css:hover {
+.section-container .grid-skills .css:hover {
   background-color: #264DE4;
 }
 
-.skills-container .grid-skills .js:hover {
+.section-container .grid-skills .js:hover {
   background-color: #F7DF1E;
 }
 
-.skills-container .grid-skills .react:hover {
+.section-container .grid-skills .react:hover {
   background-color: #61DAFB;
 }
 
-.skills-container .grid-skills .node:hover {
+.section-container .grid-skills .node:hover {
   background-color: #339933;
 }
 
-.skills-container .grid-skills .python:hover {
+.section-container .grid-skills .python:hover {
   background-color: #3776AB;
+}
+
+.section-container li::before {
+  color: #DADADB;
 }
 
 /* Projects */
@@ -426,7 +428,3 @@ hr {
   text-align: center;
 }
 
-.project-container {
-  background-color: #423a3a; /* Darker background color */
-  color: #fff; /* White text color */
-}

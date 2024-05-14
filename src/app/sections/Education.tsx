@@ -15,7 +15,7 @@ function EducationItem({
   img: any
 }) {
   return (
-    <div className="py-3">
+    <div className="py-3 px-4 w-full">
       <div className="flex flex-row items-start justify-between">
         <H3>{school}</H3>
         <div className="hidden text-nowrap lg:block">
@@ -32,7 +32,7 @@ function EducationItem({
 
 function EducationSection() {
   return (
-    <div className="skills-container">
+    <div className="section-container">
       <div className="divide-y">
         <H2>{"Education"}</H2>
         <EducationItem
