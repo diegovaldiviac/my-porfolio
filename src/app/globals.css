@@ -66,7 +66,7 @@ li {
 }
 
 .cta-btn {
-  background-color: #FFCC1A;
+  background-color: #ff941a;
   color: #1D1E20;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -365,11 +365,6 @@ hr {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20px;
-}
-
-.project-card .folder-icon {
-  font-size: 35px;
-  color: #FFCC17;
 }
 
 .project-header .small-icons {
