@@ -423,3 +423,25 @@ hr {
   text-align: center;
 }
 
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-small {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.image-large {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+

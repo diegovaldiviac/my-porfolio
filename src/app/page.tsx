@@ -8,11 +8,7 @@ import AboutMeSection from './sections/AboutMe'
 
 
 
-export default function Home() {
-
-
-
-  
+export default function Home() {  
   return (
     <Layout>
       <div className="flex flex-col items-center py-6 pt-0">
