@@ -11,7 +11,6 @@ const slideImages = [
     '/images/image4.jpg',
     '/images/image5.jpg'
 ];
-import './Slide.css'
 
 
 const proprietes = {
