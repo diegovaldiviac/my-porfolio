@@ -1,6 +1,4 @@
-import Box from "../components/Box";
 import { H2, H4 } from "../components/Headings";
-import TextItem from "../components/TextItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
     faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws,

@@ -1,5 +1,4 @@
 "use client";
-import Box from "../components/Box";
 import { H2, H5 } from "../components/Headings";
 import Button from "../components/Button";
 import { useState } from "react";

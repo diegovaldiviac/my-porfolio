@@ -1,4 +1,3 @@
-import Box from "../components/Box";
 import { H2, H3, H4, H5 } from "../components/Headings";
 import { ReactNode } from "react";
 import "../globals.css"
