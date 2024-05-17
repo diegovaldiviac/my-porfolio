@@ -1,18 +1,13 @@
 import { H2, H3, H5 } from "../components/Headings";
-import Northeastern from '../assets/Northeastern.png';
-import Catolica from '../assets/Catolica.png'
-import Grange from '../assets/Grange.png'
 
 function EducationItem({
   school,
   degree,
   date,
-  img,
 }: {
   school: string;
   degree: string;
   date: string;
-  img: any
 }) {
   return (
     <div className="py-3 px-4 w-full">
@@ -39,7 +34,6 @@ function EducationSection() {
           school={"Northeastern University"}
           degree={"Combined Bachelor of Science in Computer Science and Computer Engineering with a Minor in Math"}
           date={"May 2024"}
-          img={Northeastern}
         />
         <EducationItem
           school={"Pontificia Universidad Católica de Chile"}
@@ -47,7 +41,6 @@ function EducationSection() {
             "Major in Computing and Information Systems"
           }
           date={"July 2021"}
-          img={Catolica}
         />
         <EducationItem
           school={"The Grange School"}
@@ -55,7 +48,6 @@ function EducationSection() {
             "High School Diploma"
           }
           date={"December 2018"}
-          img={Grange}
         />
       </div>
     </div>

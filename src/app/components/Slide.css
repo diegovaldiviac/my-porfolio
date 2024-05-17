@@ -1,0 +1,17 @@
+.containerSlide {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .each-slide {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
+  }
+  
+  .each-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; 
+  }
