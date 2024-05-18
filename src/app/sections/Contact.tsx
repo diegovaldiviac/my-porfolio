@@ -19,14 +19,14 @@ function ContactItem({
 }) {
   return (
     <a href={link} target="_blank" rel="noreferrer">
-      <div className="mx-1 flex space-x-2 text-nowrap rounded-lg px-1.5 py-0.5 hover:bg-gray-200 active:bg-gray-300 dark:hover:bg-slate-600">
+      <div className="mx-1 flex space-x-2 text-nowrap rounded-lg px-1.5 py-0.5 hover:bg-gray-600 active:bg-black-300 dark:hover:bg-slate-600">
         <FontAwesomeIcon
           icon={icon}
           className="text-orange-400"
           width={15}
           height={15}
         />
-        <p className="flex-1 text-gray-600 dark:text-slate-400">{title}</p>
+        <p className="flex-1 text-white-600 dark:text-slate-400">{title}</p>
       </div>
     </a>
   );
