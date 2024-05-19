@@ -49,7 +49,13 @@ export default function ExperienceSection() {
           title={"Software Engineer"}
           company={"Buk"}
           date={"May 2024 - Currently"}
-        > </WorkExperience>
+        > 
+          <ExperienceBullets>
+            <li>
+              Currently contributing to a codebase driven by PHP, AWS and Terraform.
+            </li>
+          </ExperienceBullets>
+        </WorkExperience>
         <WorkExperience
           title={"FullStack Engineer Co-op"}
           company={"LineVision"}
@@ -57,7 +63,7 @@ export default function ExperienceSection() {
         >
           <ExperienceBullets>
           <li>
-                Refactored the database layer of the web backend from raw sql literals to Sequelize JS model type queries.
+                Refactored the database layer of the web backend from raw sql literals to Sequelize JS model type queries to protect the service from web sql injection attacks.
             </li>
             <li>
                 Leveraged github actions and terraform to build a continuous development pipeline for bundling, 
@@ -86,6 +92,9 @@ export default function ExperienceSection() {
             </li>
             <li>
                 Abstracted Hardware OS behavior to contribute to a system linux migration.
+            </li>
+            <li>
+                Utilized PyTest and JUnit to rigorously test code, guaranteeing high-quality software.
             </li>
           </ExperienceBullets>
         </WorkExperience>
