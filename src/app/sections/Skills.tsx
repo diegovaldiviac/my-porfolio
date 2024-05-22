@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
     faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws,
     faStackOverflow} from '@fortawesome/free-brands-svg-icons';
-import { faCode, faTerminal, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faTerminal, faDatabase, faFish } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function SkillsSection() {
@@ -28,7 +28,7 @@ export default function SkillsSection() {
                     <p>Node</p>
                 </div>
                 <div className="skill-card node">
-                    <FontAwesomeIcon icon={faHashnode} style={{ fontSize: '40px' }}/>
+                    <FontAwesomeIcon icon={faFish} style={{ fontSize: '40px' }}/>
                     <p>SQL</p>
                 </div>
                 <div className="skill-card react">

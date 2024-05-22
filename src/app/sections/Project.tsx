@@ -15,6 +15,11 @@ function LinkWithIcon({
   link: string;
   linkIcon: any
 }) {
+
+  const truncateUrl = (url: string, length: number) => {
+    return url.length > length ? `${url.substring(0, length)}...` : url;
+  };
+
   return (
     <a
       className="flex flex-row space-x-2 rounded-lg px-1 pt-0 hover:bg-gray-200 dark:hover:bg-slate-600"
@@ -23,10 +28,11 @@ function LinkWithIcon({
       rel="noreferrer"
     >
       <FontAwesomeIcon icon={linkIcon} width={15} height={15} />
-      <h5>{link}</h5>
+      <h5 className="truncate-url">{truncateUrl(link, 30)}</h5>
     </a>
   );
 }
+
 
 type LinkProps = {
   link: string;
@@ -70,7 +76,7 @@ function Project({
     : null;
 
   return (
-    <div className="project-container">
+    <div>
       <Button title={title} onClick={() => setIsOpen(true)} />
       <Modal title={title} date={date} isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="divide-y">
@@ -107,12 +113,18 @@ export default function ProjectsSection() {
         title={"Drone Attachment to Measure Ice Thickness"}
         date={"July 2023 - December 2023"}
         description={[
-          "Designed a radar module attachment beneath a drone coupled with a mobile application to map the thickness of ice on dubious areas on frozen bodies of water.",
+          "Designed a radar module attachment beneath a drone coupled with a mobile application to map the thickness of ice on frozen bodies of water.",
           "Engineered a lightweight 3D printed circuit board containing GPR sensor, modem and a microcontroller.",
           "Contributed to a RTOS firmware capable of executing threads, control sensors and broadcast sensor data with the modem.",
           "Implemented a full stack effort to store records in the database, security and networking backend, and a UI capable of displaying live drone location and sensor readings with a gradient of ice thickness on a google map api instance."
         ]}
-        skills={["Flask", "React", "PostgresDB", "Circuit Design", "C#", "GoogleMaps API", "SQL-Alchemy"]}
+        skills={[
+          "Flask", 
+          "React", 
+          "PostgresDB", 
+          "Circuit Design", 
+          "C#", 
+          "SQL-Alchemy"]}
         links={[
           {
             link: "https://github.com/orgs/Capstone-EECE/repositories?type=public",
@@ -179,9 +191,9 @@ export default function ProjectsSection() {
         title={"MFJK-Cub Radio"}
         date={"November 2023 - December 2023"}
         description={[
+          "Soldered and tuned the radio for transmission and receiving of ASK morse code signals of up to 40 meters.",
           "Designed and implemented MJ9340K digital transreceiver radio capable of transmitting around 2.2W of power at a 7MHz signal frequency bandwith.",
           "Strengthen key principles such as signal processing, frequency conversion, and modulation/demodulation techniques by probing the circuit and leveraging the oscilloscope to view waveforms.",
-          "Soldered and tuned the radio for transmission and receiving of ASK morse code signals of up to 40 meters.",
 
         ]}
         skills={[
