@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 //import { SpeedInsights } from "@vercel/speed-insights/next";
 //import { Analytics } from "@vercel/analytics/react";
 
@@ -15,6 +16,10 @@ export default function Root({
 }>) {
   return (
     <html lang="en">
+      <Head>
+      <link rel="icon" href="/images/letter-d.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </Head>
       <body
         className={
           inter.className

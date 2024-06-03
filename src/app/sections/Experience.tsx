@@ -14,7 +14,7 @@ function WorkExperience({
   children: ReactNode;
 }) {
   return (
-    <div className="py-3 px-4">
+    <div className="py-3 px-5">
       <div className="flex flex-row items-start justify-between text-pretty">
         <H3>{title}</H3>
         <div className="hidden text-nowrap lg:block">
