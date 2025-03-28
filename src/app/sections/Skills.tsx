@@ -1,9 +1,9 @@
 import { H2, H4 } from "../components/Headings";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faHashnode, faPhp,
-    faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws,
+import { faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faPhp,
+    faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws, faSymfony, faWatchmanMonitoring,
     faStackOverflow} from '@fortawesome/free-brands-svg-icons';
-import { faCode, faTerminal, faDatabase, faFish } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faTerminal, faDatabase, faFish, faGem } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function SkillsSection() {
@@ -46,6 +46,10 @@ export default function SkillsSection() {
                 <div className="skill-card react">
                     <FontAwesomeIcon icon={faPhp} style={{ fontSize: '40px' }}/>
                     <p>PHP</p>
+                </div>
+                <div className="skill-card html">
+                    <FontAwesomeIcon icon={faGem} style={{ fontSize: '40px' }}/>
+                    <p>Ruby</p>
                 </div>
             </div>
         </div>
@@ -92,6 +96,14 @@ export default function SkillsSection() {
                     <div className="skill-card node">
                     <FontAwesomeIcon icon={faDatabase} style={{ fontSize: '40px' }}/>
                     <p>PostgreSQL</p>
+                    </div>
+                    <div className="skill-card js">
+                    <FontAwesomeIcon icon={faSymfony} style={{ fontSize: '40px' }}/>
+                    <p>Symfony</p>
+                    </div>
+                    <div className="skill-card html">
+                    <FontAwesomeIcon icon={faWatchmanMonitoring} style={{ fontSize: '40px' }}/>
+                    <p>Grafana</p>
                     </div>
                 </div>
             </div>
