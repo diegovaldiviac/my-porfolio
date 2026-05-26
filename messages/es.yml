@@ -116,3 +116,6 @@ skills:
   title: "Habilidades"
   languages: "Lenguajes de Programación"
   tools: "Herramientas / Frameworks"
+
+github:
+  title: "Actividad en GitHub"
