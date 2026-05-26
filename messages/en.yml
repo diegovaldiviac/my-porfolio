@@ -1,0 +1,118 @@
+nav:
+  name: "Diego Valdivia Cox"
+  resume: "Resume"
+
+footer:
+  portfolio: "Portfolio"
+
+education:
+  title: "Education"
+  northeastern:
+    school: "Northeastern University"
+    degree: "Combined Bachelor of Science in Computer Science and Computer Engineering with a Minor in Math"
+    date: "May 2024"
+  uc:
+    school: "Pontificia Universidad Católica de Chile"
+    degree: "Major in Computing and Information Systems"
+    date: "July 2021"
+  grange:
+    school: "The Grange School"
+    degree: "High School Diploma"
+    date: "December 2018"
+
+experience:
+  title: "Experience"
+  buk:
+    title: "Software Engineer"
+    company: "Buk"
+    date: "May 2024 - Currently"
+    bullets:
+      - "Led the development of a scheduled-task–based synchronization architecture that enabled bidirectional integration between two platforms, leveraging internal APIs, DTOs, and Factory patterns to ensure data consistency across systems. Subsequently, evolved this integration into a real-time event-driven architecture."
+      - "Subsequently, evolved this integration into a real-time event-driven architecture by emitting events from the ORM layer and introducing sharded queue routing middleware with RabbitMQ messaging, significantly improving data freshness and system responsiveness."
+      - "Designed and implemented a cross-module integration framework, leveraging a polymorphic design and background workflows to automate processes and enhance system scalability."
+  linevision:
+    title: "FullStack Engineer Co-op"
+    company: "LineVision"
+    date: "December 2022 - August 2023"
+    bullets:
+      - "Refactored the database layer of the web backend from raw sql literals to Sequelize JS model type queries to protect the service from web sql injection attacks."
+      - "Leveraged github actions and terraform to build a continuous development pipeline for bundling, testing and deploying to AWS changes made to the main branch of the firmware repo as binaries."
+      - "Developed a continuous integration React UI internal tool for provisioning latest binaries to hardware across the globe by scripting the process of querying the database for serial numbers, connectivity through soracom API, and executing shell commands to update and reboot devices."
+      - "Maintained an Amazon Web services event driven data pipeline architecture of SNS SQS and lambda functions."
+  raysecur:
+    title: "Software Engineer Co-op"
+    company: "RaySecur"
+    date: "December 2021 - July 2022"
+    bullets:
+      - "Developed a data acquisition interface using React and Redux, enabling the generation and upload of samples to Amazon Web Services for machine learning model development. Contributed to the design of a database schema optimized for vector-based operations in LLM workloads."
+      - "Developed socket communication functionality for Node.js API software layer."
+      - "Abstracted Hardware OS behavior to contribute to a system linux migration."
+      - "Utilized PyTest and JUnit to rigorously test code, guaranteeing high-quality software."
+
+projects:
+  title: "Projects"
+  skills_label: "Skills:"
+  drone:
+    title: "Drone Attachment to Measure Ice Thickness"
+    date: "July 2023 - December 2023"
+    description:
+      - "Designed a radar module attachment beneath a drone coupled with a mobile application to map the thickness of ice on frozen bodies of water."
+      - "Engineered a lightweight 3D printed circuit board containing GPR sensor, modem and a microcontroller."
+      - "Contributed to a RTOS firmware capable of executing threads, control sensors and broadcast sensor data with the modem."
+      - "Implemented a full stack effort to store records in the database, security and networking backend, and a UI capable of displaying live drone location and sensor readings with a gradient of ice thickness on a google map api instance."
+  portfolio:
+    title: "Portfolio Website"
+    date: "April 2024 - June 2024"
+    description:
+      - "Developed personal website from scratch using Next.js and React."
+      - "Designed and implemented custom and mobile responsiveness components with Tailwind CSS."
+      - "Coming soon: Dark and Light, English and Spanish option."
+      - "Deployed website to Vercel."
+  collision:
+    title: "Collision Algorithm for Free-Flowing Objects"
+    date: "March 2021 - May 2021"
+    description:
+      - "Implemented Collision Detection algorithm using Separated Axis Theorem (SAT) for rotating free-flowing shapes."
+      - "Improve on the algorithm for multiple shapes using multi-threading and published a IEEE paper on improvements of runtime when dealing with N objects."
+      - "Displayed project on Monitor by programming on a DE1SoC FPGA board and VGA to VGA cable."
+  radio:
+    title: "MFJK-Cub Radio"
+    date: "November 2023 - December 2023"
+    description:
+      - "Soldered and tuned the radio for transmission and receiving of ASK morse code signals of up to 40 meters."
+      - "Designed and implemented MJ9340K digital transreceiver radio capable of transmitting around 2.2W of power at a 7MHz signal frequency bandwith."
+      - "Strengthened key principles such as signal processing, frequency conversion, and modulation/demodulation techniques by probing the circuit and leveraging the oscilloscope to view waveforms."
+  kv_store:
+    title: "Multi-Threaded KV Store"
+    date: "February 2024"
+    description:
+      - "Extremely fast multi-threaded key-value store written in C."
+      - "Designed and implemented thread-safe hash table using djb2 hashing algorithm."
+      - "Ensured thread safety with POSIX mutexes and condition variables."
+      - "Ranked fastest key-value store out of class of 100+ students."
+  labyrinth:
+    title: "Labyrinth Game"
+    date: "September 2022 - December 2022"
+    description:
+      - "Designed an interactive maze-based game utilizing Java with a Maven build configuration."
+      - "Implemented a server component using the proxy-client pattern, communicating with JSON messages over TCP."
+      - "Developed clients that implement the communication-layer aspects of the server-client communication."
+      - "Wrote over 50 classes and thousands of lines of code ensuring test-driven development to manufacture a cohesive, complete application, with unit and integration tests for the entire platform."
+  ml_island:
+    title: "Machine Learning Tiny Island"
+    date: "September 2022 - December 2022"
+    description:
+      - "Developed a Model and Gamestate of Tiny Island, turn-based grid-based strategy game that involves placing different terrain tiles and drawing islands to earn points."
+      - "Implemented an A* state search algorithm to determine the best high score given a known seed."
+      - "Improved to a trained reinforcement learning model that can exceed at obtaining an effective high score without prior knowledge of the seed's configurations."
+  drag_drop:
+    title: "Drag and Drop Data Acquisition"
+    date: "September 2022 - December 2022"
+    description:
+      - "Implemented a proof of concept prototype for a data acquisition view capable of uploading binaries with corresponding meta data for a reinforcement learning model."
+      - "Hooked the prototype UI to test AWS lambda functions for full cycle integration test of uploading records to the target buckets."
+
+skills:
+  title: "Skills"
+  languages: "Programming Languages"
+  tools: "Tools / Frameworks"

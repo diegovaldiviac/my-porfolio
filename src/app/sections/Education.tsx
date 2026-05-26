@@ -1,4 +1,5 @@
 import { H2, H3, H5 } from "../components/Headings";
+import { getTranslations } from "next-intl/server";
 
 function EducationItem({
   school,
@@ -25,34 +26,29 @@ function EducationItem({
   );
 }
 
-function EducationSection() {
+export default async function EducationSection() {
+  const t = await getTranslations("education");
+
   return (
     <div className="section-container">
       <div className="divide-y">
-        <H2>{"Education"}</H2>
+        <H2>{t("title")}</H2>
         <EducationItem
-          school={"Northeastern University"}
-          degree={"Combined Bachelor of Science in Computer Science and Computer Engineering with a Minor in Math"}
-          date={"May 2024"}
+          school={t("northeastern.school")}
+          degree={t("northeastern.degree")}
+          date={t("northeastern.date")}
         />
         <EducationItem
-          school={"Pontificia Universidad Católica de Chile"}
-          degree={
-            "Major in Computing and Information Systems"
-          }
-          date={"July 2021"}
+          school={t("uc.school")}
+          degree={t("uc.degree")}
+          date={t("uc.date")}
         />
         <EducationItem
-          school={"The Grange School"}
-          degree={
-            "High School Diploma"
-          }
-          date={"December 2018"}
+          school={t("grange.school")}
+          degree={t("grange.degree")}
+          date={t("grange.date")}
         />
       </div>
     </div>
-
   );
 }
-
-export default EducationSection;

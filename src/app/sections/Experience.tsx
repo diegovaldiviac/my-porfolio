@@ -1,6 +1,7 @@
 import { H2, H3, H4, H5 } from "../components/Headings";
 import { ReactNode } from "react";
-import "../globals.css"
+import { getTranslations } from "next-intl/server";
+import "../globals.css";
 
 function WorkExperience({
   title,
@@ -40,62 +41,42 @@ function ExperienceBullets({ children }: { children: ReactNode }) {
   );
 }
 
-export default function ExperienceSection() {
+export default async function ExperienceSection() {
+  const t = await getTranslations("experience");
+
+  const bukBullets = t.raw("buk.bullets") as string[];
+  const linevisionBullets = t.raw("linevision.bullets") as string[];
+  const raysecurBullets = t.raw("raysecur.bullets") as string[];
+
   return (
     <div className="section-container">
       <div className="divide-y">
-        <H2>{"Experience"}</H2>
+        <H2>{t("title")}</H2>
         <WorkExperience
-          title={"Software Engineer"}
-          company={"Buk"}
-          date={"May 2024 - Currently"}
-        > 
+          title={t("buk.title")}
+          company={t("buk.company")}
+          date={t("buk.date")}
+        >
           <ExperienceBullets>
-            <li>
-              Currently contributing to a codebase driven by PHP, AWS and Terraform.
-            </li>
+            {bukBullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
           </ExperienceBullets>
         </WorkExperience>
         <WorkExperience
-          title={"FullStack Engineer Co-op"}
-          company={"LineVision"}
-          date={"December 2022 - August 2023"}
+          title={t("linevision.title")}
+          company={t("linevision.company")}
+          date={t("linevision.date")}
         >
           <ExperienceBullets>
-          <li>
-                Refactored the database layer of the web backend from raw sql literals to Sequelize JS model type queries to protect the service from web sql injection attacks.
-            </li>
-            <li>
-                Leveraged github actions and terraform to build a continuous development pipeline for bundling, 
-                testing and deploying to AWS changes made to the main branch of the firmware repo as binaries.
-            </li>
-            <li>
-                Developed a continuous integration React UI internal tool for provisioning latest binaries to hardware across the globe by scripting the process of 
-                querying the database for serial numbers, connectivity through soracom API, and executing shell commands to update and reboot devices.
-            </li>
-            <li>
-                Maintained an Amazon Web services event driven data pipeline architecture of SNS SQS and lambda functions.
-            </li>
+            {linevisionBullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
           </ExperienceBullets>
         </WorkExperience>
         <WorkExperience
-          title={"Software Engineer Co-op"}
-          company={"RaySecur"}
-          date={"December 2021 - July 2022"}
+          title={t("raysecur.title")}
+          company={t("raysecur.company")}
+          date={t("raysecur.date")}
         >
           <ExperienceBullets>
-            <li>
-                Designed a React-Redux data acquisition UI view capable of creating and uploading samples to Amazon web service for machine learning model development.
-            </li>
-            <li>
-                Developed socket communication functionality for Node.js API software layer.
-            </li>
-            <li>
-                Abstracted Hardware OS behavior to contribute to a system linux migration.
-            </li>
-            <li>
-                Utilized PyTest and JUnit to rigorously test code, guaranteeing high-quality software.
-            </li>
+            {raysecurBullets.map((bullet, i) => <li key={i}>{bullet}</li>)}
           </ExperienceBullets>
         </WorkExperience>
       </div>
