@@ -1,7 +1,8 @@
 {
   "nav": {
     "name": "Diego Valdivia Cox",
-    "resume": "Curriculum"
+    "resume": "Curriculum",
+    "resumeUrl": "https://drive.google.com/file/d/1MRs3HCMfzrK2ykP23ZEaYZopWI_k6byn/view?usp=sharing"
   },
   "footer": {
     "portfolio": "Portfolio"
@@ -135,6 +136,16 @@
       "description": [
         "Implemented a proof of concept prototype for a data acquisition view capable of uploading binaries with corresponding meta data for a reinforcement learning model.",
         "Hooked the prototype UI to test AWS lambda functions for full cycle integration test of uploading records to the target buckets."
+      ]
+    },
+    "fintech_newsletter": {
+      "title": "Fintech Newsletter Pipeline",
+      "date": "2025",
+      "description": [
+        "Automated pipeline that collects fintech innovation signals from NewsAPI, The Guardian, and MediaStack, filtering for relevance across the global fintech landscape.",
+        "Processes articles with GPT-4o (Claude as fallback) to generate curated weekly digests with AI-powered summarization and insight extraction.",
+        "Delivers newsletters via Resend with built-in audience management — subscribers sourced directly from the Resend Contacts API.",
+        "Fully serverless architecture: scheduled weekly via GitHub Actions cron with no dedicated server or hosting costs required."
       ]
     }
   },

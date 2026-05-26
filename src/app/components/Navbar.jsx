@@ -17,7 +17,9 @@ const Navbar = () => {
         <ThemeToggle />
         <LangToggle />
         <a
-          href="https://docs.google.com/document/d/e/2PACX-1vS2lPVNRl-q-DlRJ8R3b1kgyPqOTeGbMIPaNP0XhJCtpml0fdkK2koMe3XZ88aSHw/pub"
+          href={t("resumeUrl")}
+          target="_blank"
+          rel="noreferrer"
           className="cta-btn"
         >
           {t("resume")}

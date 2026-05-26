@@ -172,6 +172,16 @@ export default function ProjectsSection() {
           { link: "https://github.com/diegovaldiviac/Drag-and-Drop", linkIcon: faGithub },
         ]}
       />
+      <Project
+        title={t("fintech_newsletter.title")}
+        date={t("fintech_newsletter.date")}
+        description={t.raw("fintech_newsletter.description") as string[]}
+        skillsLabel={sl}
+        skills={["Python", "GitHub Actions", "OpenAI GPT-4o", "Anthropic Claude", "Resend", "NewsAPI", "The Guardian API", "MediaStack"]}
+        links={[
+          { link: "https://github.com/diegovaldiviac/fintech-newsletter", linkIcon: faGithub },
+        ]}
+      />
     </div>
   );
 }

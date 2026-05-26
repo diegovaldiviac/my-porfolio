@@ -1,6 +1,7 @@
 nav:
   name: "Diego Valdivia Cox"
   resume: "Currículum"
+  resumeUrl: "https://drive.google.com/file/d/1X9iQSeYdc6XPvGY-xq0KKqHua0bTZQOt/view?usp=sharing"
 
 footer:
   portfolio: "Portafolio"
@@ -105,6 +106,14 @@ projects:
       - "Desarrollé un Modelo y Estado de Juego de Tiny Island, un juego de estrategia por turnos en cuadrícula que implica colocar diferentes fichas de terreno y dibujar islas para ganar puntos."
       - "Implementé un algoritmo de búsqueda de estado A* para determinar la mejor puntuación máxima dado una semilla conocida."
       - "Mejoré a un modelo de aprendizaje por refuerzo entrenado capaz de obtener una puntuación efectiva sin conocimiento previo de las configuraciones de la semilla."
+  fintech_newsletter:
+    title: "Pipeline de Newsletter Fintech"
+    date: "2025"
+    description:
+      - "Pipeline automatizado que recopila señales de innovación fintech desde NewsAPI, The Guardian y MediaStack, filtrando contenido relevante del ecosistema fintech global."
+      - "Procesa artículos con GPT-4o (Claude como fallback) para generar resúmenes semanales curados con extracción de insights mediante IA."
+      - "Distribuye el newsletter via Resend con gestión de audiencias integrada — suscriptores obtenidos directamente desde la API de Contactos de Resend."
+      - "Arquitectura completamente serverless: ejecutada semanalmente con GitHub Actions cron, sin servidor dedicado ni costos de hosting."
   drag_drop:
     title: "Adquisición de Datos con Gamifición"
     date: "Septiembre 2022 - Diciembre 2022"

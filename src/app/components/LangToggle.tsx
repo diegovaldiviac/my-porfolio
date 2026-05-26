@@ -16,7 +16,7 @@ export default function LangToggle() {
     <button
       onClick={toggle}
       title={locale === "en" ? "Cambiar a Español" : "Switch to English"}
-      className="flex items-center justify-center rounded-lg p-1.5 text-2xl transition-transform hover:scale-110 active:scale-95"
+      className="flex items-center justify-center rounded-lg p-2 text-4xl transition-transform hover:scale-110 active:scale-95"
     >
       {locale === "en" ? "🇨🇱" : "🇺🇸"}
     </button>
