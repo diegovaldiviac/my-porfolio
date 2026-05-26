@@ -3,6 +3,7 @@ import ContactSection from "../sections/Contact";
 import { H1 } from "./Headings";
 import { useTranslations } from "next-intl";
 import LangToggle from "./LangToggle";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const t = useTranslations("nav");
@@ -13,6 +14,7 @@ const Navbar = () => {
         <ContactSection />
       </div>
       <div className="flex items-center gap-2">
+        <ThemeToggle />
         <LangToggle />
         <a
           href="https://docs.google.com/document/d/e/2PACX-1vS2lPVNRl-q-DlRJ8R3b1kgyPqOTeGbMIPaNP0XhJCtpml0fdkK2koMe3XZ88aSHw/pub"

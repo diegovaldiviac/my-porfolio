@@ -35,7 +35,7 @@ function WorkExperience({
 
 function ExperienceBullets({ children }: { children: ReactNode }) {
   return (
-    <ul className="mx-10 my-1 list-outside list-disc space-y-1.5 text-white">
+    <ul className="mx-10 my-2 list-outside list-disc space-y-3 text-gray-900 dark:text-white">
       {children}
     </ul>
   );

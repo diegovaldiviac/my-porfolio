@@ -62,10 +62,10 @@ function Project({
       <Button title={title} onClick={() => setIsOpen(true)} />
       <Modal title={title} date={date} isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="divide-y">
-          <ul className="text-pretty text-white">{bullets}</ul>
+          <ul className="text-pretty text-gray-900 dark:text-white">{bullets}</ul>
           {skills && (
             <div className="mt-2 pt-3">
-              <p className="mr-1 inline-flex text-white">{skillsLabel}{" "}</p>
+              <p className="mr-1 inline-flex text-gray-900 dark:text-white">{skillsLabel}{" "}</p>
               {skillItems}
             </div>
           )}
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
         skillsLabel={sl}
         skills={["Next JS", "React", "Tailwind CSS"]}
         links={[
-          { link: "https://github.com/diegovaldiviac/my-portofolio", linkIcon: faGithub },
+          { link: "https://github.com/diegovaldiviac/my-porfolio", linkIcon: faGithub },
           { link: "https://diegovaldivacox.com", linkIcon: faPager },
         ]}
       />

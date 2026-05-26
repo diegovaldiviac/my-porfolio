@@ -34,10 +34,6 @@ export default async function SkillsSection() {
             <FontAwesomeIcon icon={faFish} style={{ fontSize: "40px" }} />
             <p>SQL</p>
           </div>
-          <div className="skill-card react">
-            <FontAwesomeIcon icon={faJava} style={{ fontSize: "40px" }} />
-            <p>Java</p>
-          </div>
           <div className="skill-card python">
             <FontAwesomeIcon icon={faPython} style={{ fontSize: "40px" }} />
             <p>Python</p>

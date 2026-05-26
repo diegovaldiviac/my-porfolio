@@ -3,10 +3,7 @@ import {
   faEnvelope,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 function ContactItem({
   title,
@@ -19,14 +16,14 @@ function ContactItem({
 }) {
   return (
     <a href={link} target="_blank" rel="noreferrer">
-      <div className="mx-1 flex space-x-2 text-nowrap rounded-lg px-1.5 py-0.5 hover:bg-gray-600 active:bg-black-300 dark:hover:bg-slate-600">
+      <div className="mx-1 flex space-x-2 text-nowrap rounded-lg px-1.5 py-0.5 hover:bg-gray-200 dark:hover:bg-slate-600 active:bg-black-300">
         <FontAwesomeIcon
           icon={icon}
-          className="text-orange-400"
+          className="text-blue-500 dark:text-orange-400"
           width={15}
           height={15}
         />
-        <p className="flex-1 text-white-600 dark:text-slate-400">{title}</p>
+        <p className="flex-1 text-gray-700 dark:text-slate-400">{title}</p>
       </div>
     </a>
   );
@@ -45,7 +42,7 @@ function ContactSection() {
         link={"https://www.linkedin.com/in/diegovaldiviac/"}
         icon={faLinkedin}
       />
-    <ContactItem
+      <ContactItem
         title={"+1 617 685 8340"}
         link={"tel:1-617-685-8340"}
         icon={faPhone}

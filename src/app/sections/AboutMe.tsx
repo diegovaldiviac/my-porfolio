@@ -2,6 +2,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import { useTheme } from 'next-themes';
 
 const slideImages: string[] = [
     '/images/image0.jpg',
@@ -12,7 +13,6 @@ const slideImages: string[] = [
     '/images/image5.jpg'
 ];
 
-
 const properties = {
     duration: 5000,
     transitionDuration: 500,
@@ -21,58 +21,34 @@ const properties = {
     arrows: true
 };
 
+const PLAYLIST_ID = '52jRM2zCPLnuf4AzWR4Km4';
+
 export default function AboutMeSection() {
+    const { resolvedTheme } = useTheme();
+
+    const spotifySrc = `https://open.spotify.com/embed/playlist/${PLAYLIST_ID}?utm_source=generator${resolvedTheme === 'dark' ? '&theme=0' : ''}`;
 
     return (
         <div className="container">
             <iframe
-                    src="https://open.spotify.com/embed/playlist/52jRM2zCPLnuf4AzWR4Km4?utm_source=generator&theme=0"
-                    height="400"
-                    frameBorder="0"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy">
-            </iframe>
+                src={spotifySrc}
+                height="400"
+                className="border-0"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+            />
             <div className="containerSlide">
                 <Slide {...properties}>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[0]} alt="img0" />
+                    {slideImages.map((src, i) => (
+                        <div className="each-slide" key={i}>
+                            <div>
+                                <img src={src} alt={`img${i}`} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[1]} alt="img1" />
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[2]} alt="img2" />
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[3]} alt="img3" />
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[4]} alt="img4" />
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                        <div>
-                            <img src={slideImages[5]} alt="img5" />
-                        </div>
-                    </div>
+                    ))}
                 </Slide>
             </div>
         </div>
     );
 }
-
-
-/*
-
-*/
-
