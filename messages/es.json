@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "name": "Diego Valdivia Cox",
+    "resume": "Currículum"
+  },
+  "footer": {
+    "portfolio": "Portafolio"
+  },
+  "education": {
+    "title": "Educación",
+    "northeastern": {
+      "school": "Northeastern University",
+      "degree": "Licenciatura combinada en Ciencias de la Computación e Ingeniería Computacional con Minor en Matemáticas",
+      "date": "Mayo 2024"
+    },
+    "uc": {
+      "school": "Pontificia Universidad Católica de Chile",
+      "degree": "Especialización en Sistemas de Computación e Información",
+      "date": "Julio 2021"
+    },
+    "grange": {
+      "school": "The Grange School",
+      "degree": "Diploma de Educación Media",
+      "date": "Diciembre 2018"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "buk": {
+      "title": "Ingeniero de Software",
+      "company": "Buk",
+      "date": "Mayo 2024 - Actualmente",
+      "bullets": [
+        "Lideré el desarrollo de una arquitectura de sincronización basada en tareas programadas que permitió una integración bidireccional entre dos plataformas, utilizando APIs internas, DTOs y patrones Factory para asegurar la consistencia de datos entre sistemas.",
+        "Posteriormente, mejoré esta integración hacia una arquitectura en tiempo real basada en emisión de eventos desde el ORM e incorporando middleware de enrutamiento de colas por sharding con mensajes RabbitMQ, lo que mejoró la frescura de los datos y la capacidad de respuesta para el cliente.",
+        "Diseñé e implementé un framework de integración entre módulos, aprovechando un diseño polimórfico y workflows en segundo plano para automatizar procesos y mejorar la escalabilidad del sistema."
+      ]
+    },
+    "linevision": {
+      "title": "Ingeniero FullStack Co-op",
+      "company": "LineVision",
+      "date": "Diciembre 2022 - Agosto 2023",
+      "bullets": [
+        "Construí un sistema de CI/​CD utilizando GitHub Actions y Terraform para automatizar el empaquetado y despliegue de firmware en AWS. Además, desarrollé una herramienta interna en React que permite provisionar y actualizar hardware a nivel global mediante APIs y flujos automatizados.",
+        "Refactoricé la capa backend de acceso a datos, pasando de SQL directo a un ORM, reduciendo riesgos de inyección SQL.",
+        "Optimicé una arquitectura en AWS basada en eventos, utilizando SNS, SQS y Lambda, para asegurar un procesamiento de datos en sistemas distribuidos."
+      ]
+    },
+    "raysecur": {
+      "title": "Ingeniero de Software Co-op",
+      "company": "RaySecur",
+      "date": "Diciembre 2021 - Julio 2022",
+      "bullets": [
+        "Desarrollé una vista de adquisición de datos en React-Redux, capaz de generar y subir muestras a AWS para el desarrollo de modelos de machine learning, colaboré en el diseño del esquema de base de datos optimizado para trabajar con vectores de LLMs.",
+        "Desarrollé funcionalidad de comunicación por sockets para la capa de software de la API Node.js.",
+        "Abstraje el comportamiento del sistema operativo de hardware para contribuir a una migración del sistema a Linux.",
+        "Utilicé PyTest y JUnit para probar rigurosamente el código, garantizando software de alta calidad."
+      ]
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "skills_label": "Tecnologías:",
+    "drone": {
+      "title": "Accesorio de Dron para Medir Espesor de Hielo",
+      "date": "Julio 2023 - Diciembre 2023",
+      "description": [
+        "Diseñé un módulo de radar adjunto a un dron junto con una aplicación móvil para mapear el grosor del hielo en cuerpos de agua congelados.",
+        "Diseñé una placa de circuito impresa 3D liviana que contiene sensor GPR, módem y un microcontrolador.",
+        "Contribuí a un firmware RTOS capaz de ejecutar hilos, controlar sensores y transmitir datos del sensor con el módem.",
+        "Implementé un esfuerzo full stack para almacenar registros en la base de datos, seguridad y red en el backend, y una interfaz capaz de mostrar la ubicación del dron en tiempo real y lecturas del sensor con un gradiente de grosor de hielo en una instancia de Google Maps API."
+      ]
+    },
+    "portfolio": {
+      "title": "Sitio Web Portafolio",
+      "date": "Abril 2024 - Junio 2024",
+      "description": [
+        "Desarrollé sitio web personal desde cero usando Next.js y React.",
+        "Diseñé e implementé componentes personalizados con responsividad móvil usando Tailwind CSS.",
+        "Próximamente: opción de modo oscuro/claro y español/inglés.",
+        "Desplegué el sitio web en Vercel."
+      ]
+    },
+    "collision": {
+      "title": "Algoritmo de Colisión para Objetos en Movimiento Libre",
+      "date": "Marzo 2021 - Mayo 2021",
+      "description": [
+        "Implementé un algoritmo de detección de colisiones usando el Teorema de Eje Separado (SAT) para formas giratorias de flujo libre.",
+        "Mejoré el algoritmo para múltiples formas usando multi-threading y publiqué un paper IEEE sobre mejoras del tiempo de ejecución al trabajar con N objetos.",
+        "Desplegué el proyecto en monitor programando en una placa FPGA DE1SoC y cable VGA a VGA."
+      ]
+    },
+    "radio": {
+      "title": "Radio MFJK-Cub",
+      "date": "Noviembre 2023 - Diciembre 2023",
+      "description": [
+        "Soldé y afiné el radio para transmisión y recepción de señales de código Morse ASK de hasta 40 metros.",
+        "Diseñé e implementé un transceptor digital MJ9340K capaz de transmitir alrededor de 2.2W de potencia a una frecuencia de señal de 7MHz.",
+        "Reforcé principios clave como procesamiento de señales, conversión de frecuencia y técnicas de modulación/demodulación al sondear el circuito y usar el osciloscopio para ver formas de onda."
+      ]
+    },
+    "kv_store": {
+      "title": "Store de Clave-Valor Multi-Hilo",
+      "date": "Febrero 2024",
+      "description": [
+        "Store de clave-valor multi-hilo extremadamente rápido escrito en C.",
+        "Diseñé e implementé una tabla hash thread-safe usando el algoritmo de hashing djb2.",
+        "Garanticé la seguridad de hilos con mutexes y variables de condición POSIX.",
+        "Clasificado como el store de clave-valor más rápido de una clase de más de 100 estudiantes."
+      ]
+    },
+    "labyrinth": {
+      "title": "Juego del Laberinto",
+      "date": "Septiembre 2022 - Diciembre 2022",
+      "description": [
+        "Diseñé un juego interactivo basado en laberintos usando Java con una configuración de compilación Maven.",
+        "Implementé un componente servidor usando el patrón proxy-cliente, comunicándose con mensajes JSON sobre TCP.",
+        "Desarrollé clientes que implementan los aspectos de la capa de comunicación del servidor-cliente.",
+        "Escribí más de 50 clases y miles de líneas de código asegurando el desarrollo guiado por pruebas para fabricar una aplicación cohesiva y completa, con pruebas unitarias y de integración para toda la plataforma."
+      ]
+    },
+    "ml_island": {
+      "title": "Machine Learning Tiny Island",
+      "date": "Septiembre 2022 - Diciembre 2022",
+      "description": [
+        "Desarrollé un Modelo y Estado de Juego de Tiny Island, un juego de estrategia por turnos en cuadrícula que implica colocar diferentes fichas de terreno y dibujar islas para ganar puntos.",
+        "Implementé un algoritmo de búsqueda de estado A* para determinar la mejor puntuación máxima dado una semilla conocida.",
+        "Mejoré a un modelo de aprendizaje por refuerzo entrenado capaz de obtener una puntuación efectiva sin conocimiento previo de las configuraciones de la semilla."
+      ]
+    },
+    "drag_drop": {
+      "title": "Adquisición de Datos con Gamifición",
+      "date": "Septiembre 2022 - Diciembre 2022",
+      "description": [
+        "Implementé un prototipo de prueba de concepto para una vista de adquisición de datos capaz de cargar binarios con metadatos correspondientes para un modelo de aprendizaje por refuerzo.",
+        "Conecté la UI prototipo para probar funciones AWS Lambda en una prueba de integración de ciclo completo de carga de registros a los buckets objetivo."
+      ]
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "languages": "Lenguajes de Programación",
+    "tools": "Herramientas / Frameworks"
+  },
+  "github": {
+    "title": "Actividad en GitHub"
+  }
+}
