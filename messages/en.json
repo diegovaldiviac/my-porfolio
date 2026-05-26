@@ -145,5 +145,13 @@
   },
   "github": {
     "title": "GitHub Activity"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Finance + Software Technology insights — no spam, unsubscribe anytime.",
+    "placeholder": "your@email.com",
+    "submit": "Subscribe",
+    "loading": "Subscribing...",
+    "success": "You're in! Thanks for subscribing."
   }
 }

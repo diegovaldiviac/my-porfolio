@@ -119,3 +119,11 @@ skills:
 
 github:
   title: "Actividad en GitHub"
+
+newsletter:
+  title: "Newsletter"
+  description: "Contenido sobre Finanzas y Tecnología de Software — sin spam, cancela cuando quieras."
+  placeholder: "tu@email.com"
+  submit: "Suscribirme"
+  loading: "Suscribiendo..."
+  success: "¡Listo! Gracias por suscribirte."

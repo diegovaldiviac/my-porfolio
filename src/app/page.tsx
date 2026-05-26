@@ -5,6 +5,7 @@ import EducationSection from './sections/Education';
 import ExperienceSection from './sections/Experience';
 import AboutMeSection from './sections/AboutMe';
 import GitHubActivitySection from './sections/GitHubActivity';
+import NewsletterSection from './sections/Newsletter';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <GitHubActivitySection />
         <EducationSection />
         <ExperienceSection />
+        <NewsletterSection />
         <ProjectsSection />
         <SkillSection />
       </div>
