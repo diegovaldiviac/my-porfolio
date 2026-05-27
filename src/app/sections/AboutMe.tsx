@@ -3,6 +3,8 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { useTheme } from 'next-themes';
+import NowPlaying from '../components/NowPlaying';
+import TopTracks from '../components/TopTracks';
 
 const slideImages: string[] = [
     '/images/image0.jpg',
@@ -29,25 +31,32 @@ export default function AboutMeSection() {
     const spotifySrc = `https://open.spotify.com/embed/playlist/${PLAYLIST_ID}?utm_source=generator${resolvedTheme === 'dark' ? '&theme=0' : ''}`;
 
     return (
-        <div className="container">
-            <iframe
-                src={spotifySrc}
-                height="400"
-                className="border-0"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-            />
-            <div className="containerSlide">
-                <Slide {...properties}>
-                    {slideImages.map((src, i) => (
-                        <div className="each-slide" key={i}>
-                            <div>
-                                <img src={src} alt={`img${i}`} />
+        <div className="w-full flex flex-col gap-4">
+            <div className="container">
+                <iframe
+                    src={spotifySrc}
+                    height="400"
+                    className="border-0"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                />
+                <div className="containerSlide">
+                    <Slide {...properties}>
+                        {slideImages.map((src, i) => (
+                            <div className="each-slide" key={i}>
+                                <div>
+                                    <img src={src} alt={`img${i}`} />
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </Slide>
+                        ))}
+                    </Slide>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-4 rounded-xl border border-gray-100 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900/50">
+                <NowPlaying />
+                <TopTracks />
             </div>
         </div>
     );

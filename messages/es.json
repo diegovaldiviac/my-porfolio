@@ -153,6 +153,10 @@
     "languages": "Lenguajes de Programación",
     "tools": "Herramientas / Frameworks"
   },
+  "visits": {
+    "label": "visitas",
+    "tooltip": "Total de visitas desde el lanzamiento"
+  },
   "github": {
     "title": "Actividad en GitHub"
   },

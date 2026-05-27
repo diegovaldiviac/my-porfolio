@@ -4,6 +4,7 @@ import { H1 } from "./Headings";
 import { useTranslations } from "next-intl";
 import LangToggle from "./LangToggle";
 import ThemeToggle from "./ThemeToggle";
+import VisitCounter from "./VisitCounter";
 
 const Navbar = () => {
   const t = useTranslations("nav");
@@ -13,7 +14,8 @@ const Navbar = () => {
         <H1>{t("name")}</H1>
         <ContactSection />
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
+        <VisitCounter />
         <ThemeToggle />
         <LangToggle />
         <a

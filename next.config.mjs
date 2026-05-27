@@ -7,6 +7,11 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/*": ["./messages/**/*"],
   },
+  images: {
+    remotePatterns: [
+      { hostname: "i.scdn.co" },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
