@@ -37,7 +37,10 @@
       "company": "LarrainVial",
       "date": "Junio 2026 - Actualmente",
       "bullets": [
-        "Liderando un equipo de Ingenieros para transformar una de las empresas financieras más grandes de Chile en una empresa moderna impulsada por datos e IA."
+        "Liderando un equipo de Ingenieros para transformar una de las empresas financieras más grandes de Chile en una empresa moderna impulsada por datos e IA.",
+        "Construyendo un data lakehouse en la nube sobre una arquitectura medallion, refinando la ingesta cruda a través de capas bronze, silver y gold hasta obtener datasets gobernados y listos para análisis.",
+        "Consolidando los silos de datos dispersos entre las áreas de negocio en una única fuente de verdad, habilitando analítica en tiempo real y toma de decisiones apoyada por IA.",
+        "Automatizando tanto la carga de datos hacia sistemas legados como la extracción que alimenta los reportes, eliminando la manipulación manual y el riesgo operacional que conlleva."
       ]
     },
     "buk": {

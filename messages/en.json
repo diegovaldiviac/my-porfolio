@@ -37,7 +37,10 @@
       "company": "LarrainVial",
       "date": "June 2026 - Currently",
       "bullets": [
-        "Leading a squad of Engineers to transform one of the biggest financial companies in Chile into a modern data and AI driven company."
+        "Leading a squad of Engineers to transform one of the biggest financial companies in Chile into a modern data and AI driven company.",
+        "Building a cloud data lakehouse on a medallion architecture, refining raw ingestion through bronze, silver and gold layers into governed, analysis-ready datasets.",
+        "Consolidating the data silos that had grown across business units into a single source of truth, unlocking real-time analytics and AI-supported decision making on top of it.",
+        "Automating both the loading of data into legacy systems and the extraction that feeds reporting, removing manual handling and the operational risk that comes with it."
       ]
     },
     "buk": {
