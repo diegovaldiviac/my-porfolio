@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { H2 } from "../components/Headings";
+import { Check, Loader2, ArrowRight } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
+import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -40,48 +43,63 @@ export default function NewsletterSection() {
   };
 
   return (
-    <div className="section-container">
-      <div className="divide-y">
-        <H2>{t("title")}</H2>
-        <div className="w-full rounded-2xl bg-gray-100 px-8 py-14 dark:bg-[#252628] sm:px-14 sm:py-20">
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
-            <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 sm:text-lg">
+    <Section id="newsletter" label={t("title")}>
+      <Reveal>
+        <div className="relative overflow-hidden rounded-lg border border-border bg-card p-6 sm:p-8">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-dot-grid opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]"
+          />
+
+          <div className="relative max-w-lg">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               {t("description")}
             </p>
 
             {status === "success" ? (
-              <p className="text-base font-semibold text-green-600 dark:text-green-400">
+              <p className="mt-6 inline-flex items-center gap-2 font-mono text-sm text-accent">
+                <Check className="h-4 w-4" />
                 {t("success")}
               </p>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="flex w-full flex-col gap-3 sm:flex-row"
-              >
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("placeholder")}
-                  className="flex-1 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-900"
-                />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="cta-btn whitespace-nowrap px-8 py-3 disabled:opacity-50"
-                >
-                  {status === "loading" ? t("loading") : t("submit")}
-                </button>
-              </form>
-            )}
+              <form onSubmit={handleSubmit} className="mt-6">
+                <div className="flex flex-col gap-2 sm:flex-row">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t("placeholder")}
+                    className="h-9 flex-1 rounded-md border border-input bg-background px-3 font-mono text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent/60 focus:ring-1 focus:ring-ring"
+                  />
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    disabled={status === "loading"}
+                    className="shrink-0"
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        {t("loading")}
+                      </>
+                    ) : (
+                      <>
+                        {t("submit")}
+                        <ArrowRight className="h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                </div>
 
-            {status === "error" && (
-              <p className="text-sm text-red-500">{errorMsg}</p>
+                {status === "error" && (
+                  <p className="mt-2 font-mono text-xs text-red-500">{errorMsg}</p>
+                )}
+              </form>
             )}
           </div>
         </div>
-      </div>
-    </div>
+      </Reveal>
+    </Section>
   );
 }

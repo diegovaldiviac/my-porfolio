@@ -6,8 +6,8 @@ import { ActivityCalendar } from "react-activity-calendar";
 import type { Activity } from "react-activity-calendar";
 import type { YearData } from "../sections/GitHubActivity";
 
-const DARK_THEME = ["#1D1E20", "#7c3a00", "#c06200", "#e07a00", "#ff941a"];
-const LIGHT_THEME = ["#F9FAFB", "#bfdbfe", "#93c5fd", "#3b82f6", "#1d4ed8"];
+const DARK_THEME = ["#1c1c1f", "#5c2c00", "#8f4600", "#c76200", "#f97316"];
+const LIGHT_THEME = ["#f4f4f5", "#fed7aa", "#fdba74", "#fb923c", "#f97316"];
 
 export default function ContributionGraph({
   yearData,
@@ -27,21 +27,17 @@ export default function ContributionGraph({
   const { activities, total } = yearData[selectedYear] ?? { activities: [] as Activity[], total: 0 };
   const colorScheme = resolvedTheme === "dark" ? "dark" : "light";
 
-  const isLight = resolvedTheme === "light";
-  const activeBg = isLight ? "bg-blue-500 text-white" : "bg-orange-500 text-white";
-  const inactiveBg = isLight
-    ? "text-gray-600 hover:bg-gray-200"
-    : "text-gray-400 hover:bg-gray-700";
-
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="flex gap-2">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap gap-1.5">
         {years.map((year) => (
           <button
             key={year}
             onClick={() => setSelectedYear(year)}
-            className={`rounded-md px-3 py-1 text-sm font-medium transition-colors ${
-              year === selectedYear ? activeBg : inactiveBg
+            className={`rounded-md border px-2.5 py-1 font-mono text-xs transition-colors ${
+              year === selectedYear
+                ? "border-accent/40 bg-accent/10 text-accent"
+                : "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground"
             }`}
           >
             {year}
@@ -49,7 +45,7 @@ export default function ContributionGraph({
         ))}
       </div>
 
-      <div className="w-full overflow-x-auto flex justify-center">
+      <div className="no-scrollbar w-full overflow-x-auto">
         {activities.length > 0 ? (
           <ActivityCalendar
             data={activities}
@@ -58,13 +54,13 @@ export default function ContributionGraph({
             labels={{
               totalCount: `${total} contributions in ${selectedYear}`,
             }}
-            blockSize={16}
-            blockMargin={5}
-            fontSize={14}
+            blockSize={13}
+            blockMargin={4}
+            fontSize={12}
             showWeekdayLabels
           />
         ) : (
-          <p className="text-sm text-gray-500">No contribution data available.</p>
+          <p className="font-mono text-xs text-muted-foreground">No contribution data available.</p>
         )}
       </div>
     </div>

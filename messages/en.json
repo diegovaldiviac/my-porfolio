@@ -2,7 +2,12 @@
   "nav": {
     "name": "Diego Valdivia Cox",
     "resume": "Curriculum",
-    "resumeUrl": "https://drive.google.com/file/d/1MRs3HCMfzrK2ykP23ZEaYZopWI_k6byn/view?usp=sharing"
+    "resumeUrl": "https://drive.google.com/file/d/1MRs3HCMfzrK2ykP23ZEaYZopWI_k6byn/view?usp=sharing",
+    "links": {
+      "experience": "Experience",
+      "projects": "Projects",
+      "skills": "Skills"
+    }
   },
   "footer": {
     "portfolio": "Portfolio"
@@ -27,10 +32,18 @@
   },
   "experience": {
     "title": "Experience",
+    "larrainvial": {
+      "title": "Engineering Manager",
+      "company": "LarrainVial",
+      "date": "June 2026 - Currently",
+      "bullets": [
+        "Leading a squad of Engineers to transform one of the biggest financial companies in Chile into a modern data and AI driven company."
+      ]
+    },
     "buk": {
       "title": "Software Engineer",
       "company": "Buk",
-      "date": "May 2024 - Currently",
+      "date": "May 2024 - June 2026",
       "bullets": [
         "Led the development of a scheduled-task–based synchronization architecture that enabled bidirectional integration between two platforms, leveraging internal APIs, DTOs, and Factory patterns to ensure data consistency across systems. Subsequently, evolved this integration into a real-time event-driven architecture.",
         "Subsequently, evolved this integration into a real-time event-driven architecture by emitting events from the ORM layer and introducing sharded queue routing middleware with RabbitMQ messaging, significantly improving data freshness and system responsiveness.",
@@ -147,6 +160,26 @@
         "Delivers newsletters via Resend with built-in audience management — subscribers sourced directly from the Resend Contacts API.",
         "Fully serverless architecture: scheduled weekly via GitHub Actions cron with no dedicated server or hosting costs required."
       ]
+    },
+    "easycancha": {
+      "title": "EasyCancha Booking Bot",
+      "date": "2026",
+      "description": [
+        "Books courts automatically at the exact moment slots are released — the scheduler computes the trigger, authenticates with stored credentials and reserves the configured time.",
+        "Drives headless Chromium through Playwright with anti-detection and proxy support, since the site blocks plain HTTP clients, and parses the booking pages with BeautifulSoup.",
+        "Splits configuration into a shared .env plus one .env.bookingN per reservation, so any number of bookings run from the same codebase with no code changes.",
+        "Deploys as one Azure Container Apps Job per booking: the container starts on a cron, does a single pass and exits, so there is no always-on VM to keep alive."
+      ]
+    },
+    "portalinmobiliario": {
+      "title": "Portal Inmobiliario Listing Monitor",
+      "date": "2026",
+      "description": [
+        "Monitors a Portal Inmobiliario property search and sends a Telegram message for every new listing that appears.",
+        "Renders the client-side results with Playwright and headless Chromium through a proxy, then extracts title, URL, price, bedrooms and location from the result cards with BeautifulSoup.",
+        "Diffs listing IDs against a persisted state file so each property is only ever notified once, no matter how often the job runs.",
+        "Runs as a scheduled Azure Container Apps Job with state on a mounted Azure File share, since the job filesystem is ephemeral."
+      ]
     }
   },
   "skills": {
@@ -168,5 +201,25 @@
     "submit": "Subscribe",
     "loading": "Subscribing...",
     "success": "You're in! Thanks for subscribing."
+  },
+  "hero": {
+    "role": "Software Engineer",
+    "location": "Santiago, Chile",
+    "tagline": "I build and lead backend and platform work in fintech — payments, data pipelines and the infrastructure underneath them.",
+    "status": "Engineering Manager at LarrainVial",
+    "cta_work": "See selected work",
+    "cta_contact": "Get in touch"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "phone": "Phone"
+  },
+  "about": {
+    "title": "Beyond the code",
+    "listening": "What I am listening to",
+    "gallery": "Off the clock"
   }
 }

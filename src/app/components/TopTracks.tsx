@@ -20,9 +20,9 @@ export default function TopTracks() {
   if (!tracks.length && !artists.length) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+        <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
           Top Tracks
         </p>
         <ol className="space-y-2">
@@ -32,15 +32,15 @@ export default function TopTracks() {
                 href={t.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-lg p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="flex items-center gap-2 rounded-lg p-1.5 transition-colors hover:bg-muted"
               >
-                <span className="w-4 shrink-0 text-xs text-gray-400 text-right">{i + 1}</span>
+                <span className="w-4 shrink-0 text-right font-mono text-[11px] text-muted-foreground">{i + 1}</span>
                 {t.image && (
                   <Image src={t.image} alt={t.name} width={32} height={32} className="rounded shrink-0" />
                 )}
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-medium text-gray-900 dark:text-white">{t.name}</p>
-                  <p className="truncate text-xs text-gray-500 dark:text-gray-400">{t.artist}</p>
+                  <p className="truncate text-xs font-medium text-foreground">{t.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">{t.artist}</p>
                 </div>
               </a>
             </li>
@@ -49,7 +49,7 @@ export default function TopTracks() {
       </div>
 
       <div>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+        <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
           Top Artists
         </p>
         <ol className="space-y-2">
@@ -59,13 +59,13 @@ export default function TopTracks() {
                 href={a.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-lg p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="flex items-center gap-2 rounded-lg p-1.5 transition-colors hover:bg-muted"
               >
-                <span className="w-4 shrink-0 text-xs text-gray-400 text-right">{i + 1}</span>
+                <span className="w-4 shrink-0 text-right font-mono text-[11px] text-muted-foreground">{i + 1}</span>
                 {a.image && (
                   <Image src={a.image} alt={a.name} width={32} height={32} className="rounded-full shrink-0" />
                 )}
-                <p className="truncate text-xs font-medium text-gray-900 dark:text-white">{a.name}</p>
+                <p className="truncate text-xs font-medium text-foreground">{a.name}</p>
               </a>
             </li>
           ))}

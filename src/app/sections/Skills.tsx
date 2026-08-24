@@ -1,111 +1,81 @@
-import { H2, H4 } from "../components/Headings";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHtml5, faCss3Alt, faJava, faNodeJs, faPython, faLinux, faPhp,
-  faDocker, faReact, faGithubSquare, faJira, faConfluence, faAws, faSymfony, faWatchmanMonitoring,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
-import { faCode, faTerminal, faDatabase, faFish, faGem } from "@fortawesome/free-solid-svg-icons";
 import { getTranslations } from "next-intl/server";
+import { Reveal } from "@/components/ui/reveal";
+import { Section } from "@/components/ui/section";
+
+/**
+ * Plain wordmarks rather than icons: the old grid mapped tech to whatever
+ * FontAwesome brand icon was closest (a fish for SQL, Stack Overflow for C#),
+ * which read as noise. Monospace names are honest and scan faster.
+ */
+const LANGUAGES = [
+  "Ruby",
+  "Python",
+  "C#",
+  "PHP",
+  "JavaScript",
+  "TypeScript",
+  "SQL",
+  "HTML",
+  "CSS",
+];
+
+const TOOLS = [
+  "Rails",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Symfony",
+  "Docker",
+  "Terraform",
+  "AWS",
+  "PostgreSQL",
+  "Redis",
+  "Grafana",
+  "Linux",
+  "Git",
+  "Jira",
+  "Postman",
+];
+
+function SkillGroup({
+  title,
+  items,
+  delay,
+}: {
+  title: string;
+  items: string[];
+  delay: number;
+}) {
+  return (
+    <Reveal delay={delay}>
+      <div>
+        <h3 className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+          {title}
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {items.map((item) => (
+            <span
+              key={item}
+              className="rounded-md border border-border bg-card px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:border-accent/40 hover:bg-muted hover:text-foreground"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
 export default async function SkillsSection() {
   const t = await getTranslations("skills");
 
   return (
-    <div className="section-container">
-      <H2>{t("title")}</H2>
-
-      <div className="divide-y">
-        <H4>{t("languages")}</H4>
-        <div className="grid-skills">
-          <div className="skill-card html">
-            <FontAwesomeIcon icon={faHtml5} style={{ fontSize: "40px" }} />
-            <p>HTML</p>
-          </div>
-          <div className="skill-card css">
-            <FontAwesomeIcon icon={faCss3Alt} style={{ fontSize: "40px" }} />
-            <p>CSS</p>
-          </div>
-          <div className="skill-card node">
-            <FontAwesomeIcon icon={faNodeJs} style={{ fontSize: "40px" }} />
-            <p>Node</p>
-          </div>
-          <div className="skill-card node">
-            <FontAwesomeIcon icon={faFish} style={{ fontSize: "40px" }} />
-            <p>SQL</p>
-          </div>
-          <div className="skill-card python">
-            <FontAwesomeIcon icon={faPython} style={{ fontSize: "40px" }} />
-            <p>Python</p>
-          </div>
-          <div className="skill-card js">
-            <FontAwesomeIcon icon={faStackOverflow} style={{ fontSize: "40px" }} />
-            <p>C#</p>
-          </div>
-          <div className="skill-card react">
-            <FontAwesomeIcon icon={faPhp} style={{ fontSize: "40px" }} />
-            <p>PHP</p>
-          </div>
-          <div className="skill-card html">
-            <FontAwesomeIcon icon={faGem} style={{ fontSize: "40px" }} />
-            <p>Ruby</p>
-          </div>
-        </div>
+    <Section id="skills" label={t("title")}>
+      <div className="space-y-6">
+        <SkillGroup title={t("languages")} items={LANGUAGES} delay={0} />
+        <SkillGroup title={t("tools")} items={TOOLS} delay={0.06} />
       </div>
-
-      <div className="divide-y">
-        <H4>{t("tools")}</H4>
-        <div className="grid-skills">
-          <div className="skill-card css">
-            <FontAwesomeIcon icon={faDocker} style={{ fontSize: "40px" }} />
-            <p>Docker</p>
-          </div>
-          <div className="skill-card js">
-            <FontAwesomeIcon icon={faGithubSquare} style={{ fontSize: "40px" }} />
-            <p>GitHub</p>
-          </div>
-          <div className="skill-card react">
-            <FontAwesomeIcon icon={faJira} style={{ fontSize: "40px" }} />
-            <p>Jira</p>
-          </div>
-          <div className="skill-card python">
-            <FontAwesomeIcon icon={faConfluence} style={{ fontSize: "40px" }} />
-            <p>Confluence</p>
-          </div>
-          <div className="skill-card html">
-            <FontAwesomeIcon icon={faCode} style={{ fontSize: "40px" }} />
-            <p>Postman</p>
-          </div>
-          <div className="skill-card react">
-            <FontAwesomeIcon icon={faReact} style={{ fontSize: "40px" }} />
-            <p>React</p>
-          </div>
-          <div className="skill-card html">
-            <FontAwesomeIcon icon={faAws} style={{ fontSize: "40px" }} />
-            <p>AWS</p>
-          </div>
-          <div className="skill-card js">
-            <FontAwesomeIcon icon={faLinux} style={{ fontSize: "40px" }} />
-            <p>Linux</p>
-          </div>
-          <div className="skill-card react">
-            <FontAwesomeIcon icon={faTerminal} style={{ fontSize: "40px" }} />
-            <p>Terraform</p>
-          </div>
-          <div className="skill-card node">
-            <FontAwesomeIcon icon={faDatabase} style={{ fontSize: "40px" }} />
-            <p>PostgreSQL</p>
-          </div>
-          <div className="skill-card js">
-            <FontAwesomeIcon icon={faSymfony} style={{ fontSize: "40px" }} />
-            <p>Symfony</p>
-          </div>
-          <div className="skill-card html">
-            <FontAwesomeIcon icon={faWatchmanMonitoring} style={{ fontSize: "40px" }} />
-            <p>Grafana</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </Section>
   );
 }

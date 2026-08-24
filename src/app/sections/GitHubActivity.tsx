@@ -1,6 +1,6 @@
-import { H2 } from "../components/Headings";
 import { getTranslations } from "next-intl/server";
 import ContributionGraph from "../components/ContributionGraph";
+import { Section } from "@/components/ui/section";
 import type { Activity } from "react-activity-calendar";
 
 type ContributionDay = {
@@ -89,7 +89,13 @@ export default async function GitHubActivitySection() {
   const username = process.env.GITHUB_USERNAME ?? "diegovaldiviac";
 
   const currentYear = new Date().getFullYear();
-  const years = [currentYear, currentYear - 1, currentYear - 2, currentYear - 3];
+  const years = [
+    currentYear,
+    currentYear - 1,
+    currentYear - 2,
+    currentYear - 3,
+    currentYear - 4,
+  ];
 
   const results = await Promise.all(
     years.map((year) => fetchYearContributions(username, token, year))
@@ -101,13 +107,8 @@ export default async function GitHubActivitySection() {
   });
 
   return (
-    <div className="section-container">
-      <div className="divide-y">
-        <H2>{t("title")}</H2>
-        <div className="py-4">
-          <ContributionGraph yearData={yearData} years={years} />
-        </div>
-      </div>
-    </div>
+    <Section id="github" label={t("title")}>
+      <ContributionGraph yearData={yearData} years={years} />
+    </Section>
   );
 }

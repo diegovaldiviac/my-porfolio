@@ -2,7 +2,12 @@
   "nav": {
     "name": "Diego Valdivia Cox",
     "resume": "Currículum",
-    "resumeUrl": "https://drive.google.com/file/d/1X9iQSeYdc6XPvGY-xq0KKqHua0bTZQOt/view?usp=sharing"
+    "resumeUrl": "https://drive.google.com/file/d/1X9iQSeYdc6XPvGY-xq0KKqHua0bTZQOt/view?usp=sharing",
+    "links": {
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "skills": "Habilidades"
+    }
   },
   "footer": {
     "portfolio": "Portafolio"
@@ -27,6 +32,14 @@
   },
   "experience": {
     "title": "Experiencia",
+    "larrainvial": {
+      "title": "Líder Desarrollo Proyectos TI",
+      "company": "LarrainVial",
+      "date": "Junio 2026 - Actualmente",
+      "bullets": [
+        "Liderando un equipo de Ingenieros para transformar una de las empresas financieras más grandes de Chile en una empresa moderna impulsada por datos e IA."
+      ]
+    },
     "buk": {
       "title": "Ingeniero de Software",
       "company": "Buk",
@@ -146,6 +159,26 @@
         "Implementé un prototipo de prueba de concepto para una vista de adquisición de datos capaz de cargar binarios con metadatos correspondientes para un modelo de aprendizaje por refuerzo.",
         "Conecté la UI prototipo para probar funciones AWS Lambda en una prueba de integración de ciclo completo de carga de registros a los buckets objetivo."
       ]
+    },
+    "easycancha": {
+      "title": "Bot de Reserva EasyCancha",
+      "date": "2026",
+      "description": [
+        "Reserva canchas automáticamente en el momento exacto en que se liberan los turnos — el scheduler calcula el trigger, inicia sesión con las credenciales guardadas y reserva el horario configurado.",
+        "Controla Chromium headless con Playwright, con anti-detección y soporte de proxy porque el sitio bloquea clientes HTTP simples, y parsea las páginas de reserva con BeautifulSoup.",
+        "Separa la configuración en un .env compartido más un .env.bookingN por reserva, de modo que cualquier cantidad de reservas corre sobre el mismo código sin modificarlo.",
+        "Se despliega como un Azure Container Apps Job por reserva: el contenedor arranca por cron, ejecuta una pasada y termina, sin una VM encendida permanentemente."
+      ]
+    },
+    "portalinmobiliario": {
+      "title": "Monitor de Avisos Portal Inmobiliario",
+      "date": "2026",
+      "description": [
+        "Monitorea una búsqueda de propiedades en Portal Inmobiliario y envía un mensaje de Telegram por cada aviso nuevo que aparece.",
+        "Renderiza los resultados client-side con Playwright y Chromium headless a través de un proxy, y luego extrae título, URL, precio, dormitorios y ubicación de las tarjetas con BeautifulSoup.",
+        "Compara los IDs de los avisos contra un archivo de estado persistido, de modo que cada propiedad se notifica una sola vez sin importar cuántas veces corra el job.",
+        "Corre como un Azure Container Apps Job programado, con el estado en un Azure File share montado, porque el filesystem del job es efímero."
+      ]
     }
   },
   "skills": {
@@ -167,5 +200,25 @@
     "submit": "Suscribirme",
     "loading": "Suscribiendo...",
     "success": "¡Listo! Gracias por suscribirte."
+  },
+  "hero": {
+    "role": "Ingeniero de Software",
+    "location": "Santiago, Chile",
+    "tagline": "Construyo y lidero trabajo de backend y plataforma en fintech — pagos, pipelines de datos y la infraestructura que los sostiene.",
+    "status": "Engineering Manager en LarrainVial",
+    "cta_work": "Ver proyectos",
+    "cta_contact": "Contactar"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Correo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "phone": "Teléfono"
+  },
+  "about": {
+    "title": "Fuera del código",
+    "listening": "Lo que estoy escuchando",
+    "gallery": "Tiempo libre"
   }
 }

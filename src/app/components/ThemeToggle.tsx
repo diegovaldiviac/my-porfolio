@@ -1,25 +1,31 @@
 "use client";
+
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch — only render icon after mount
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="w-8 h-8" />;
+  if (!mounted) return <div className="h-9 w-9" />;
+
+  const isDark = resolvedTheme === "dark";
 
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      className="flex items-center justify-center rounded-lg p-1.5 text-lg transition-transform hover:scale-110 active:scale-95 text-[var(--text-primary)]"
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="text-muted-foreground hover:text-foreground"
     >
-      <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} />
-    </button>
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </Button>
   );
 }

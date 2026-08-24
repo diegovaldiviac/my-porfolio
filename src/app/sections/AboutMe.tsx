@@ -1,63 +1,55 @@
 "use client";
-import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
-import { useTheme } from 'next-themes';
-import NowPlaying from '../components/NowPlaying';
-import TopTracks from '../components/TopTracks';
 
-const slideImages: string[] = [
-    '/images/image0.jpg',
-    '/images/image1.jpg',
-    '/images/image2.jpg',
-    '/images/image3.jpg',
-    '/images/image4.jpg',
-    '/images/image5.jpg'
-];
+import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
+import NowPlaying from "../components/NowPlaying";
+import TopTracks from "../components/TopTracks";
+import PhotoGallery from "../components/PhotoGallery";
+import { Reveal } from "@/components/ui/reveal";
+import { Section } from "@/components/ui/section";
 
-const properties = {
-    duration: 5000,
-    transitionDuration: 500,
-    infinite: true,
-    indicators: true,
-    arrows: true
-};
-
-const PLAYLIST_ID = '52jRM2zCPLnuf4AzWR4Km4';
+const PLAYLIST_ID = "52jRM2zCPLnuf4AzWR4Km4";
 
 export default function AboutMeSection() {
-    const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const t = useTranslations("about");
 
-    const spotifySrc = `https://open.spotify.com/embed/playlist/${PLAYLIST_ID}?utm_source=generator${resolvedTheme === 'dark' ? '&theme=0' : ''}`;
+  const spotifySrc = `https://open.spotify.com/embed/playlist/${PLAYLIST_ID}?utm_source=generator${
+    resolvedTheme === "dark" ? "&theme=0" : ""
+  }`;
 
-    return (
-        <div className="w-full flex flex-col gap-4">
-            <div className="container">
-                <iframe
-                    src={spotifySrc}
-                    height="400"
-                    className="border-0"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                />
-                <div className="containerSlide">
-                    <Slide {...properties}>
-                        {slideImages.map((src, i) => (
-                            <div className="each-slide" key={i}>
-                                <div>
-                                    <img src={src} alt={`img${i}`} />
-                                </div>
-                            </div>
-                        ))}
-                    </Slide>
-                </div>
+  return (
+    <Section id="about" label={t("title")}>
+      <div className="space-y-6">
+        {/* Photos lead the section — they are the warm part. */}
+        <Reveal>
+          <PhotoGallery />
+        </Reveal>
+
+        <Reveal delay={0.06}>
+          <div className="rounded-lg border border-border bg-card p-4">
+            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+              {t("listening")}
+            </p>
+            <div className="space-y-5">
+              <NowPlaying />
+              <TopTracks />
             </div>
+          </div>
+        </Reveal>
 
-            <div className="flex flex-col gap-4 rounded-xl border border-gray-100 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900/50">
-                <NowPlaying />
-                <TopTracks />
-            </div>
-        </div>
-    );
+        <Reveal delay={0.12}>
+          <iframe
+            title="Spotify playlist"
+            src={spotifySrc}
+            height="352"
+            className="w-full rounded-lg border-0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Reveal>
+      </div>
+    </Section>
+  );
 }

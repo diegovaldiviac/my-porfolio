@@ -1,6 +1,8 @@
 "use client";
+
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export default function LangToggle() {
   const locale = useLocale();
@@ -13,12 +15,15 @@ export default function LangToggle() {
   };
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={toggle}
       title={locale === "en" ? "Cambiar a Español" : "Switch to English"}
-      className="flex items-center justify-center rounded-lg p-2 text-4xl transition-transform hover:scale-110 active:scale-95"
+      aria-label={locale === "en" ? "Cambiar a Español" : "Switch to English"}
+      className="font-mono text-[11px] font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground"
     >
-      {locale === "en" ? "🇨🇱" : "🇺🇸"}
-    </button>
+      {locale === "en" ? "es" : "en"}
+    </Button>
   );
 }
