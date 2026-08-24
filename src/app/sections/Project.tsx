@@ -148,7 +148,7 @@ export default function ProjectsSection() {
 
   return (
     <Section id="projects" label={t("title")}>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, i) => {
           const description = t.raw(`${project.key}.description`) as string[];
 

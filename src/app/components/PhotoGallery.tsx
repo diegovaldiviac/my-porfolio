@@ -22,11 +22,13 @@ const PHOTOS = [
   { src: "/images/image5.jpg", width: 4032, height: 3024 },
   { src: "/images/image6.jpg", width: 1600, height: 1062 },
   { src: "/images/image7.jpg", width: 1007, height: 1536 },
+  { src: "/images/image13.jpg", width: 720, height: 1280 },
   { src: "/images/image8.jpg", width: 1500, height: 2000 },
   { src: "/images/image9.jpg", width: 1500, height: 2000 },
   { src: "/images/image10.jpg", width: 1500, height: 2000 },
   { src: "/images/image11.jpg", width: 591, height: 900 },
   { src: "/images/image12.jpg", width: 1500, height: 2000 },
+  { src: "/images/image14.jpg", width: 1600, height: 1062 },
   { src: "/images/image1.jpg", width: 2397, height: 4032 },
   { src: "/images/image2.jpg", width: 482, height: 853 },
   { src: "/images/image3.jpg", width: 1047, height: 2078 },
@@ -42,7 +44,7 @@ export default function PhotoGallery() {
   return (
     <>
       {/* CSS columns give true masonry: each photo keeps its natural height. */}
-      <div className="columns-2 gap-3 sm:columns-3">
+      <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
         {PHOTOS.map((photo, i) => (
           <button
             key={photo.src}
@@ -56,7 +58,7 @@ export default function PhotoGallery() {
               alt={`${t("gallery")} — ${i + 1}`}
               width={photo.width}
               height={photo.height}
-              sizes="(min-width: 640px) 240px, 45vw"
+              sizes="(min-width: 1024px) 230px, (min-width: 640px) 240px, 45vw"
               className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]"
             />
           </button>

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
-import { Section } from "@/components/ui/section";
+import { Pane } from "@/components/ui/section";
 
 /**
  * Plain wordmarks rather than icons: the old grid mapped tech to whatever
@@ -71,11 +71,11 @@ export default async function SkillsSection() {
   const t = await getTranslations("skills");
 
   return (
-    <Section id="skills" label={t("title")}>
+    <Pane id="skills" label={t("title")}>
       <div className="space-y-6">
         <SkillGroup title={t("languages")} items={LANGUAGES} delay={0} />
         <SkillGroup title={t("tools")} items={TOOLS} delay={0.06} />
       </div>
-    </Section>
+    </Pane>
   );
 }

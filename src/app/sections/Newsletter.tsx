@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Check, Loader2, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { Section } from "@/components/ui/section";
+import { Pane } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -43,9 +43,9 @@ export default function NewsletterSection() {
   };
 
   return (
-    <Section id="newsletter" label={t("title")}>
+    <Pane id="newsletter" label={t("title")}>
       <Reveal>
-        <div className="relative overflow-hidden rounded-lg border border-border bg-card p-6 sm:p-8">
+        <div className="relative overflow-hidden rounded-lg border border-border bg-card p-6">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-dot-grid opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000,transparent)]"
@@ -100,6 +100,6 @@ export default function NewsletterSection() {
           </div>
         </div>
       </Reveal>
-    </Section>
+    </Pane>
   );
 }

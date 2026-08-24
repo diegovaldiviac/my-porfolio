@@ -26,29 +26,31 @@ export default function AboutMeSection() {
           <PhotoGallery />
         </Reveal>
 
-        <Reveal delay={0.06}>
-          <div className="rounded-lg border border-border bg-card p-4">
-            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              {t("listening")}
-            </p>
-            <div className="space-y-5">
-              <NowPlaying />
-              <TopTracks />
+        {/* Listening and the playlist ride side by side instead of stacking. */}
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Reveal delay={0.06}>
+            <div className="h-full rounded-lg border border-border bg-card p-4">
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                {t("listening")}
+              </p>
+              <div className="space-y-5">
+                <NowPlaying />
+                <TopTracks />
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={0.12}>
-          <iframe
-            title="Spotify playlist"
-            src={spotifySrc}
-            height="352"
-            className="w-full rounded-lg border-0"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
-        </Reveal>
+          <Reveal delay={0.12}>
+            <iframe
+              title="Spotify playlist"
+              src={spotifySrc}
+              className="h-full min-h-[352px] w-full rounded-lg border-0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </Reveal>
+        </div>
       </div>
     </Section>
   );

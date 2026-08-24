@@ -8,6 +8,7 @@ import EducationSection from './sections/Education';
 import AboutMeSection from './sections/AboutMe';
 import NewsletterSection from './sections/Newsletter';
 import ContactSection from './sections/Contact';
+import { PairedBand } from '@/components/ui/section';
 
 export default function Home() {
   return (
@@ -16,11 +17,19 @@ export default function Home() {
       <ExperienceSection />
       <ProjectsSection />
       <GitHubActivitySection />
-      <SkillSection />
-      <EducationSection />
+
+      {/* Four short blocks that used to be four full bands, now two rows. */}
+      <PairedBand>
+        <SkillSection />
+        <EducationSection />
+      </PairedBand>
+
       <AboutMeSection />
-      <NewsletterSection />
-      <ContactSection />
+
+      <PairedBand>
+        <NewsletterSection />
+        <ContactSection />
+      </PairedBand>
     </Layout>
   );
 }
